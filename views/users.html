@@ -9,49 +9,41 @@
 <body>
     <div class="donor-detail">
         <h2>Donor Information</h2>
-        <form action="/users/create" method="POST" id="form">
+        <form action="/api/users" method="POST" id="form">
             <label for="lastname">Last Name</label>
-            <input type="text" name="donor" id="lastname">
+            <input type="text" name="lastname" id="lastname">
             <label for="firstname">First Name</label>
-            <input type="text" name="donor" id="firstname">
+            <input type="text" name="firstname" id="firstname">
             <label for="address">Address</label>
-            <input type="text" name="donor" id="address">
+            <input type="text" name="address" id="address">
             <label for="city">City</label>
-            <input type="text" name="donor" id="city">
+            <input type="text" name="city" id="city">
             <label for="state">State</label>
-            <input type="text" name="donor" id="state">
+            <input type="text" name="state" id="state">
             <label for="country">Country</label>
-            <select id="country-dropdown" name="dropdown">
+            <select id="country-dropdown" name="country">
             </select>
             <label for="postal">Postal Code</label>
-            <input type="text" name="donor" id="postal">
+            <input type="text" name="postal" id="postal">
             <label for="phonenumber">Phone Number</label>
-            <input type="text" name="donor" id="phonenumber">
+            <input type="text" name="phone" id="phonenumber">
             <label for="email">Email</label>
-            <input type="email" name="donor" id="email">
+            <input type="email" name="email" id="email">
             <label for="form-of-contact">Preferred Form of Contact</label>
-            <select id="form-of-contact-dropdown" name="dropdown">
-                <option value="contact">Phone</option>
-                <option value="contact">Email</option>
+            <select id="form-of-contact-dropdown" name="contact">
             </select>
             <label for="form-of-payment">Preferred Form of Payment</label>
-            <select id="form-of-payment-dropdown" name="dropdown">
-                <option value="payment">USD</option>
-                <option value="payment">Euro</option>
-                <option value="payment">Bitcoin</option>
+            <select id="form-of-payment-dropdown" name="payment">
             </select>
             <label for="frequency">Frequency of Donation</label>
-            <select id="frequency-of-donation-dropdown" name="dropdown">
-                <option value="payment">Monthly</option>
-                <option value="payment">Yearly</option>
-                <option value="payment">One-time</option>
+            <select id="frequency-of-donation-dropdown" name="frequency">
             </select>
             <label for="amount">Amount of Donation</label>
-            <input type="text" name="donor" id="amount">
+            <input type="text" name="amount" id="amount">
             <label for="comment">Comment</label>
             <textarea name="comment" id="comment" cols="30" rows="10" form="form"></textarea>
+            <button type="submit" id="review-btn">Review</button>
         </form>
-        <button type="submit" id="review-btn">Review</button>
     </div>
 </body>
 </html>

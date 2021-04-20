@@ -1,20 +1,13 @@
-let express = require("express");
-let router = express.Router();
-let db = require("../database");
+const router = require("express").Router();
 
-router.get("/form", (req, res, next) => {
-  res.render("users-form");
+router.post("/", (req, res, next) => {
+  res.redirect("/confirmation");
 });
 
-router.post("/create", (req, res, next) => {
-  const userDetails = req.body;
-
-  let sql = "INSERT INTO users SET ?";
-  db.query(sql, userDetails, function (err, data) {
-    if (err) throw err;
-    console.log("User data is inserted successfully ");
-  });
-  res.redirect("/users/form"); // redirect to user form page after inserting the data
-});
+router.get("/confirmation"),
+  (req, res, next) => {
+    const response = fetch("/api/users", req.body);
+    res.render("../views/confirmation.html");
+  };
 
 module.exports = router;

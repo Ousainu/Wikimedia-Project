@@ -197,6 +197,12 @@ let countries = [
   "Zimbabwe",
 ];
 
+const contacts = ["phone", "email"];
+
+const payments = ["USD", "Euro", "Bitcoin"];
+
+const donations = ["Monthly", "Yearly", "One-time"];
+
 const countryDropdown = document.getElementById("country-dropdown");
 countries.forEach((country) => {
   const optionTag = document.createElement("option");
@@ -204,36 +210,47 @@ countries.forEach((country) => {
   countryDropdown.appendChild(optionTag);
 });
 
-const reviewBtn = document.getElementById("review-btn");
-
-// const inputValues = Array.from(document.querySelectorAll("#form input")).reduce(
-//   (acc, input) => ({ ...acc, [input.id]: input.value }),
-//   {}
-// );
-
-// console.log(inputValues);
-
-reviewBtn.addEventListener("click", function (event) {
-  const lastName = document.getElementById("lastname").value;
-  console.log("last name", lastName);
-  //   const lastNameConfirmation = document.getElementById("lastname-confirmation");
-  //   lastNameConfirmation.innerText = lastName;
-  //   const firstName = document.getElementById("firstname").value;
-  //   const address = document.getElementById("address").value;
-  //   const city = document.getElementById("city").value;
-  //   const state = document.getElementById("state").value;
-  //   const country = document.getElementById("country-dropdown").value;
-  //   const postal = document.getElementById("postal").value;
-  //   const phoneNumber = document.getElementById("phonenumber").value;
-  //   const email = document.getElementById("email").value;
-  //   const formOfContact = document.getElementById("form-of-contact-dropdown")
-  //     .value;
-  //   const formOfpayment = document.getElementById("form-of-payment-dropdown")
-  //     .value;
-  //   const frequencyOfDonation = document.getElementById(
-  //     "frequency-of-donation-dropdown"
-  //   ).value;
-  //   const amount = document.getElementById("amount").value;
-  //   const comment = document.getElementById("comment").value;
-  location.href = "/views/confirmation.html";
+const contactDropdown = document.getElementById("form-of-contact-dropdown");
+contacts.forEach((contact) => {
+  const optionTag = document.createElement("option");
+  optionTag.innerText = contact;
+  contactDropdown.appendChild(optionTag);
 });
+
+const paymentDropdown = document.getElementById("form-of-payment-dropdown");
+payments.forEach((payment) => {
+  const optionTag = document.createElement("option");
+  optionTag.innerText = payment;
+  paymentDropdown.appendChild(optionTag);
+});
+
+const donationDropdown = document.getElementById(
+  "frequency-of-donation-dropdown"
+);
+donations.forEach((donation) => {
+  const optionTag = document.createElement("option");
+  optionTag.innerText = donation;
+  donationDropdown.appendChild(optionTag);
+});
+
+// const form = document.getElementById("form");
+// form.onsubmit = async (e) => {
+//   let response = await fetch("/api/users");
+//   let result = response.formData();
+//   console.log("result", result);
+// };
+
+// const form = document.forms.form;
+// const formData = new FormData(form);
+// const lastname = formData.get("lastname");
+// console.log(lastname);
+
+// const reviewBtn = document.getElementById("review-btn");
+
+// reviewBtn.addEventListener("click", async function (event) {
+//   let response = await fetch("/api/users", {
+//     method: "GET",
+//   });
+//   let result = response;
+//   console.log("result", result);
+// });
